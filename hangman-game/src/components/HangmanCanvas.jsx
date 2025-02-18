@@ -29,32 +29,32 @@ const HangmanCanvas = ({ wrongGuesses }) => {
     ctx.lineTo(120, 80);
     ctx.stroke();
 
-    if (stage >= 1) {
+    if (stage >= 0) {
       ctx.beginPath();
       ctx.arc(120, 100, 20, 0, Math.PI * 2);
       ctx.stroke();
     }
-    if (stage >= 2) {
+    if (stage >= 1) {
       ctx.moveTo(120, 120);
       ctx.lineTo(120, 180);
       ctx.stroke();
     }
-    if (stage >= 3) {
+    if (stage >= 2) {
       ctx.moveTo(120, 140);
       ctx.lineTo(90, 160);
       ctx.stroke();
     }
-    if (stage >= 4) {
+    if (stage >= 3) {
       ctx.moveTo(120, 140);
       ctx.lineTo(150, 160);
       ctx.stroke();
     }
-    if (stage >= 5) {
+    if (stage >= 4) {
       ctx.moveTo(120, 180);
       ctx.lineTo(90, 230);
       ctx.stroke();
     }
-    if (stage >= 6) {
+    if (stage >= 5) {
       ctx.moveTo(120, 180);
       ctx.lineTo(150, 230);
       ctx.stroke();
