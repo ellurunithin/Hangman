@@ -1,0 +1,15 @@
+.word-display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Adjust height as needed */
+  }
+  
+  .word-display {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  

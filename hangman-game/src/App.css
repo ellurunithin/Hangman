@@ -1,38 +1,186 @@
-.App {
+/* Global Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #000, #4facfe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Main Container */
+.container {
   text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 85%;
+  max-width: 400px;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Hangman Canvas */
+.hangman-canvas {
+  display: block;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  width: 90px;
+  height: auto;
+  margin-bottom: 10px;
+  max-height: 150px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Word Display */
+p {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  /* margin-bottom: 15px; */
+  word-wrap: break-word;
+  text-transform: uppercase;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.keyboard {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 5px;
+}
+
+.keyboard-row button {
+  background: #fff;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.keyboard-row button:hover {
+  background: #00f2fe;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.keyboard-row button:disabled {
+  background: #888;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Game Messages */
+.game-over,
+.winner {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.game-over {
+  color: #ff4b5c;
+}
+
+.winner {
+  color: #fff;
+}
+
+/* New Game Button */
+.new-game {
+  background: #ff4b5c;
+  color: white;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 15px;
+  display: block;
+  margin: 15px auto; /* Centers horizontally */
+  
+}
+
+.new-game:hover {
+  background: #c43c4a;
+}
+
+
+
+/* Start Game button styling */
+.start-game {
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff6f61, #ff3d3d);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(255, 63, 63, 0.4);
+  outline: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    height: 95%;
+    padding: 8px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hangman-canvas {
+    max-width: 80px;
+    max-height: 120px;
+  }
+
+  p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .letters {
+    grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
+    gap: 6px;
+  }
+
+  .letters button {
+    font-size: 0.9rem;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .new-game {
+    font-size: 0.8rem;
+    padding: 6px;
   }
 }
